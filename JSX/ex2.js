@@ -1,3 +1,5 @@
+import React from 'react';
+
 const myName = "Simo"
 
 const greet = (name) => {
