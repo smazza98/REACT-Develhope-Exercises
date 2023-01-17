@@ -1,23 +1,23 @@
-#Components - 01
+# Components - 01
 
 Create a new React application with create-react-app and remove all the code within the src folder.
 
-#Components - 02
+# Components - 02
 
 Write a Hello class components that renders the "Hello, World!" message within an h1 tag.
 
-#Components - 03
+# Components - 03
 
 Write a class component called App that renders the Hello component within a div tag.
 
-#Components - 04
+# Components - 04
 
 Create a new index.js file within the src folder and render the App component using the ReactDOM.render method.
 
-#Components - 06
+# Components - 06
 
 Modify the Hello component so that it shows a p tag below the h1 tag with the message "What a beautiful day!".
 
-#Components - 07
+# Components - 07
 
 Extract the "What a beautiful day!" message into a new component called Message and render it within the Hello component.
