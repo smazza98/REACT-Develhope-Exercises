@@ -1,12 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 function useGithubUser(username) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  const fetchData = useCallback(() => {
     setLoading(true);
+    setError(null);
     fetch(`https://api.github.com/users/${username}`)
       .then((res) => res.json())
       .then((data) => {
@@ -19,7 +20,13 @@ function useGithubUser(username) {
       });
   }, [username]);
 
-  return [data, loading, error];
+  useEffect(() => {
+    if (username) {
+      fetchData();
+    }
+  }, [username, fetchData]);
+
+  return [data, loading, error, fetchData];
 }
 
 export default useGithubUser;

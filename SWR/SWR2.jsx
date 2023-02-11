@@ -6,6 +6,7 @@ function useGithubUser(username) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!username) return;
     setLoading(true);
     fetch(`https://api.github.com/users/${username}`)
       .then((res) => res.json())
